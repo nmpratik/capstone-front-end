@@ -7,7 +7,7 @@ body {
 }
 
 .registration-form form {
-    background-color: #fff;
+    background-color: #d3cfcf;
     max-width: 600px;
     margin: auto;
     padding: 50px 70px;
@@ -30,7 +30,7 @@ body {
 }
 
 .registration-form .signup {
-    margin-left: 177px;
+    margin-left: 105px;
     margin-bottom: 30px;
 }
 
@@ -51,9 +51,20 @@ body {
     margin-top: 20px;
 }
 
+.registration-form .create-account1 {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #0a0a0a;
+    border: none;
+    color: white;
+    margin-top: 20px;
+}
+
 .registration-form .social-media {
     max-width: 600px;
-    background-color: #fff;
+    background-color: #d3cfcf;
     margin: auto;
     padding: 35px 0;
     border-bottom-left-radius: 30px;
