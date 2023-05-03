@@ -13,16 +13,13 @@
 </head>
 
 <body>
-    <div class="registration-form">
-        <form>
+    <div class="registration-form" id="register">
+        <form >
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
             </div>
             <div class="signup">
                 <h2>SignUp</h2>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control item" id="name" placeholder="Name">
             </div>
             <div class="form-group">
                 <input type="text" class="form-control item" id="email" placeholder="Email">
@@ -31,16 +28,31 @@
                 <input type="password" class="form-control item" id="password" placeholder="password">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control item" id="newpassword" placeholder="New password">
+                <label><b>Gender</b></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                    <label class="form-check-label" for="other">Other</label>
+                </div>
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-block create-account"><a href=""
-                        style="color: white;">Register</a></button>
+                <input type="text" class="form-control item" id="role" placeholder="Role : Admin/User">
+            </div>
+            <div class="form-group">
+                <button type="submit" style="color: white;" class="btn btn-block create-account">Register</button>
             </div>
         </form>
         <div class="social-media">
         </div>
     </div>
+    <script src="signup.js"></script>
 </body>
 
 </html>
