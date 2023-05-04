@@ -7,7 +7,7 @@ forgotPasswordLink.addEventListener("click", function (event) {
 
 const signup = document.getElementById("sign-up-page")
 signup.addEventListener("click", function (event) {
-  window.location.href = "../sign-up/signup.html"
+  window.location.href = "../signup/signup-page.html"
 });
 
 

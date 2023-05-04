@@ -5,7 +5,7 @@ function reloadPage() {
 }
 
 document.getElementById("login").addEventListener("click", function() {
-  window.location.href = "../login/login-page.html";
+  window.location.href = "../loginpage/login.html";
 });
 
 
