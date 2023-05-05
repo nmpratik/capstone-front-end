@@ -17,14 +17,13 @@ function setupForm() {
 
     const formSignup = document.getElementById('signup-link')
 
-    formSignup.onsubmit = ev => { // when form is submitted, this function would be called
+    formSignup.onsubmit = ev => { 
 
-        ev.preventDefault() // stop the default behaviour of refreshing the page
+        ev.preventDefault() 
 
-        const formData = new FormData(ev.target) // ev.target points to form tag in the html
+        const formData = new FormData(ev.target) 
 
-        const user = Object.fromEntries(formData.entries()) // you are converting form data to js object
-        console.log(user)
+        const user = Object.fromEntries(formData.entries())
 
         const { sts, msg } = validateForm(user)
 
@@ -47,7 +46,6 @@ function apiSignup(user, form) {
 
         .then(res => {
             form.reset()
-            // window.location.reload()
             showSuccessModal()
         }).catch(err => console.log(err))
 }
@@ -56,5 +54,4 @@ function showSuccessModal() {
     const myModalEl = document.getElementById('successModal');
     const modal = new bootstrap.Modal(myModalEl)
     modal.show()
-    window.location.href = "../login/login-page.html";
 }
