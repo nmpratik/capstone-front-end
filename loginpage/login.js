@@ -2,7 +2,7 @@ const forgotPasswordLink = document.getElementById("forgot-password");
 
 forgotPasswordLink.addEventListener("click", function (event) {
   event.preventDefault();
-  window.location.href = "./forgotpass/forgotpass.html";
+  window.location.href = "../forgotpass/forgotpass.html";
 });
 
 const signup = document.getElementById("sign-up-page")
