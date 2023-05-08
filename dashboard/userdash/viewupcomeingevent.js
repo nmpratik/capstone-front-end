@@ -1,16 +1,33 @@
+const validateForm = ({ location }) => {
+
+    if (location.length <= 0) return { msg: 'Enter location to search', sts: false }
+
+    return { sts: 'success', msg: 'all fields are valid' }
+}
+
 function setupTable() {
+
     const table = document.getElementById('tableEvent')
+
+    const btnSearch = document.getElementById('btnSearch')
+
+    btnSearch.onclick = () => {
+
+        apiFetchAllLocationEvents(table, document.getElementById('location').value)
+    }
+
     apiFetchAllEvents(table)
 }
 
 setupTable()
 
 function propulateActualData(table, events) {
-
+    while (table.rows.length > 1) {
+        table.deleteRow(1)
+    }
     for (const event of events) {
-
         const { id, title, startdate, enddate, location, time } = event
-        const updatePageUrl = `./updateEvent.html?id=${id}`
+        const viewPageUrl = `./viewEvent.html?id=${id}`
 
         const row = table.insertRow()
         row.insertCell(0).innerHTML = id
@@ -20,45 +37,35 @@ function propulateActualData(table, events) {
         row.insertCell(4).innerHTML = location
         row.insertCell(5).innerHTML = time
         row.insertCell(6).innerHTML = `
-            <a class='ms-2' href='${updatePageUrl}'>Update</a> 
-            <a class='ms-2' onclick='showConfirmDeleteModal(${id})'>Delete</a> 
+        <a href='${viewPageUrl}'>View</a> 
         `
     }
 }
 
-function showConfirmDeleteModal(id) {
-    console.log('clicked ' + id)
-    const myModalEl = document.getElementById('deleteModal');
-    const modal = new bootstrap.Modal(myModalEl)
-    modal.show()
-
-    const btDl = document.getElementById('btDl')
-    btDl.onclick = () => {
-        apiCallDeleteEvent(id, modal)
-    }
-}
 
 function apiFetchAllEvents(table) {
+
     axios.get('http://localhost:8080/admin/events')
         .then(res => {
             const { data } = res
-            console.log(data)
             propulateActualData(table, data)
         })
         .catch(err => console.log(err))
 }
 
+function apiFetchAllLocationEvents(table, loc) {
 
-function apiCallDeleteEvent(id, modal) {
-    const url = `http://localhost:8080/admin/events/${id}`
-
-    axios.delete(url)
-        .then(res =>
-            window.location.reload())
-        .then(({ sts, msg, bd }) => modal.hide())
-        .catch(console.log)
+    const url = `http://localhost:8080/attendee/events`
+    axios.get(url, {
+        params: {
+            location: loc
+        }
+    }).then(res => {
+        const { data } = res
+        propulateActualData(table, data)
+    })
+        .catch(err => console.log(err))
 }
-
 function logOut() {
     localStorage.setItem("userId", null)
     window.location.href = "../../homepage/home.html"

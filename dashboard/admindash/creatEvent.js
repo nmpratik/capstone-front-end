@@ -42,6 +42,7 @@ function setupForm() {
         }
     }
 }
+
 setupForm()
 
 function apiSignup(user, form) {
@@ -60,4 +61,9 @@ function showSuccessModal() {
     const myModalEl = document.getElementById('successModal');
     const modal = new bootstrap.Modal(myModalEl)
     modal.show()
+}
+
+function logOut() {
+    localStorage.setItem("userId", null)
+    window.location.href = "../../homepage/home.html"
 }

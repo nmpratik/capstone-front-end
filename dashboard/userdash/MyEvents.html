@@ -24,7 +24,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="padding: 3vh;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./userdashboard.html"><b style="font-size: xx-large;">Hai User!</b></a>
+            <a class="navbar-brand" href="./user-dash.html"><b style="font-size: xx-large;">Hai User!</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,29 +46,14 @@
 
     </nav>
     <div class="container mt-3">
-
-        <div class="row text-dark mt-2 ">
-            <div class="col text-center">
-                <h2 class="p-2 ">Events</h2>
-            </div>
-
-        </div>
-        <div class="row mt-3">
-            <div class="col-3">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="location" placeholder="Location" name="location">
-                    <label for="location">Serach by Location</label>
-                </div>
-
-            </div>
-            <div class="col-2">
-                <input type="button" value="Serach" class="btn btn-danger" id="btnSearch">
-            </div>
+        <div class="col text-center" style="padding-top: 30px; padding-bottom: 20px;">
+            <h2 class="p-2"><b>My Events</b></h2>
         </div>
         <div class="container mt-3">
 
             <div class="row mt-3">
-                <table class="table table-info" id="tableEvent" style="border: 5px solid;">
+
+                <table class="table table-info" id="tableEvent" style="border: 5px;">
                     <thead>
                         <tr>
                             <th>Event ID</th>
@@ -77,7 +62,6 @@
                             <th>End Date</th>
                             <th>Location</th>
                             <th>Time</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -87,7 +71,7 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="viewupcomeingevent.js"></script>
+        <script src="myEvents.js"></script>
 </body>
 
 </html>
